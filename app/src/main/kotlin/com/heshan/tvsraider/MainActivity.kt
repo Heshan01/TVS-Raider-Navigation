@@ -1411,7 +1411,7 @@ class MainActivity : Activity() {
             setPadding(dp(10), 0, 0, 0)
             addView(text("TVS_RAIDER_BT4", 13, TEXT, body(600)))
             logBleStatus = text("CAN-BUS V2.4 · 10 Hz POLLING", 10, MUTED, Typeface.MONOSPACE)
-            bTexts.addView(logBleStatus)
+            addView(logBleStatus)
         }
         banner.addView(bTexts, LinearLayout.LayoutParams(0, -2, 1f))
         val liveChip = text("LIVE STREAM", 9, ACCENT, Typeface.MONOSPACE).apply {
