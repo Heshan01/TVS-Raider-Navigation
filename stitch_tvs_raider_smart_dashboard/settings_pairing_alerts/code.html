@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;background-color:#111417;color:#e1e2e7;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#0b0e11", "tertiary-fixed-dim": "#4ae176", "error-container": "#93000a", "primary-fixed": "#42fdda", "on-secondary-fixed": "#2c1700", "on-error": "#690005", "surface-container": "#1d2023", "primary-fixed-dim": "#00dfbe", "on-primary-fixed": "#00201a", "error": "#ffb4ab", "surface-container-highest": "#323538", "inverse-on-surface": "#2e3134", "secondary-fixed-dim": "#ffb86b", "on-secondary-container": "#583300", "outline": "#84948f", "surface-dim": "#111417", "surface-container-high": "#272a2e", "secondary": "#ffb86b", "tertiary": "#8fffa3", "on-tertiary-fixed-variant": "#005321", "outline-variant": "#3b4a45", "tertiary-fixed": "#6bff8f", "on-secondary": "#492900", "on-surface": "#e1e2e7", "primary-container": "#00e5c3", "inverse-primary": "#006b5a", "on-tertiary": "#003915", "on-tertiary-container": "#00632a", "on-primary-fixed-variant": "#005143", "on-background": "#e1e2e7", "on-secondary-fixed-variant": "#683d00", "surface-bright": "#37393d", "secondary-container": "#ed9000", "surface-container-low": "#191c1f", "inverse-surface": "#e1e2e7", "surface-tint": "#00dfbe", "on-primary-container": "#006152", "surface": "#111417", "on-surface-variant": "#b9cac4", "on-error-container": "#ffdad6", "surface-variant": "#323538", "background": "#111417", "primary": "#70ffe0", "on-tertiary-fixed": "#002109", "secondary-fixed": "#ffdcbc", "on-primary": "#00382e", "tertiary-container": "#50e67a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-lg": "1.5rem", "gutter": "1rem", "space-lg": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-lg": "2.5rem", "margin-md": "1.5rem", "space-sm": "0.5rem", "space-xl": "2rem" }, "fontFamily": { "display-md": ["JetBrains Mono"], "display-lg-mobile": ["JetBrains Mono"], "label-telemetry-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "label-telemetry-lg": ["JetBrains Mono"], "label-telemetry-md": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "display-lg": ["JetBrains Mono"], "headline-sm": ["Space Grotesk"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Space Grotesk"] }, "fontSize": { "display-md": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-telemetry-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-telemetry-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-telemetry-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)]"><div class="px-gutter h-6 flex items-center justify-between font-label-telemetry-sm text-label-telemetry-sm text-outline"><span class="tracking-wider">12:45</span><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[13px] text-tertiary-fixed-dim">bluetooth_connected</span><span class="material-symbols-outlined text-[13px]">network_cell</span><span class="tracking-wider">5G</span><span class="material-symbols-outlined text-[13px]">battery_charging_90</span></div></div><div class="h-14 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(0,229,195,0.6)] animate-pulse"></div><h1 class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-semibold">Settings</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Telemetry Diagnostics" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">sensors</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter pt-20 pb-28 bg-surface"><div class="flex flex-col w-full pb-10 space-y-space-lg">
+<!-- Top Section / Screen Heading -->
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface-variant uppercase tracking-widest flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_rgba(0,229,195,0.8)]"></span>
+        TVS Raider
+      </span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-tertiary-fixed-dim bg-surface-container-high px-2 py-0.5 rounded-full">
+        FIRMWARE V2.4.9
+      </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Settings</h2>
+</div>
+<!-- Connected Bike Hero Card (Obsidian Telemetry Cluster) -->
+<div class="relative bg-surface-container-low rounded-xl p-space-md shadow-md overflow-hidden group">
+<!-- Subtle telemetry accent line background -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<!-- Motorcycle Badge Icon -->
+<div class="relative flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-primary text-[28px]">two_wheeler</span>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-tertiary shadow-[0_0_8px_rgba(74,225,118,0.8)] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+</div>
+<!-- Info Stack -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">TVS Raider 125</h3>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-tertiary-fixed-dim bg-surface-container px-1.5 py-0.5 rounded">BT LE</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline tracking-wider bg-surface-container-lowest px-1.5 py-0.5 rounded">C0:63:80:0C:73:E1</span>
+<span class="flex items-center gap-1 font-label-telemetry-sm text-label-telemetry-sm text-tertiary-fixed-dim">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+              Connected
+            </span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="flex-shrink-0 min-h-[38px] px-3.5 py-1.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-label-telemetry-md font-label-telemetry-md uppercase tracking-wider rounded-full transition-all active:scale-95 shadow-sm" type="button">
+        Change
+      </button>
+</div>
+</div>
+<!-- RIDING Card Group -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase tracking-wider">RIDING</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline-variant">BLE_SYNC_ACT</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-md shadow-sm">
+<!-- Row 1: Mirror Navigation -->
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[19px]">turn_sharp_right</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold truncate">Mirror navigation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Send Google Maps turns to the cluster</span>
+</div>
+</div>
+<!-- Cockpit Toggle Switch ON -->
+<button aria-checked="true" class="w-12 h-6 bg-primary-container rounded-full p-0.5 transition-colors relative flex-shrink-0 shadow-[0_0_12px_rgba(0,229,195,0.4)] focus:outline-none" role="switch" type="button">
+<div class="w-5 h-5 rounded-full bg-on-primary-container translate-x-6 transition-transform shadow-md"></div>
+</button>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Row 2: Ride Mode Continuous Connect -->
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[19px]">sync_saved_locally</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold truncate">Ride mode</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Keep connecting, even after a phone restart</span>
+</div>
+</div>
+<!-- Cockpit Toggle Switch ON -->
+<button aria-checked="true" class="w-12 h-6 bg-primary-container rounded-full p-0.5 transition-colors relative flex-shrink-0 shadow-[0_0_12px_rgba(0,229,195,0.4)] focus:outline-none" role="switch" type="button">
+<div class="w-5 h-5 rounded-full bg-on-primary-container translate-x-6 transition-transform shadow-md"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- ALERTS Card Group -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase tracking-wider">ALERTS</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-secondary-fixed-dim flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+        HAPTIC_ENGAGED
+      </span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-md shadow-sm">
+<!-- Speed Alert Row -->
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[19px]">speed</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold truncate">Speed alert</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vibrate the phone when you reach this speed</span>
+</div>
+</div>
+<!-- Toggle ON -->
+<button aria-checked="true" class="w-12 h-6 bg-primary-container rounded-full p-0.5 transition-colors relative flex-shrink-0 shadow-[0_0_12px_rgba(0,229,195,0.4)] focus:outline-none" role="switch" type="button">
+<div class="w-5 h-5 rounded-full bg-on-primary-container translate-x-6 transition-transform shadow-md"></div>
+</button>
+</div>
+<!-- Sub-control Stepper Box -->
+<div class="ml-10 bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-outline">vibration</span>
+<span class="font-label-telemetry-md text-label-telemetry-md text-on-surface-variant">Alert at:</span>
+</div>
+<div class="flex items-center bg-surface-container-high rounded-lg p-0.5">
+<button aria-label="Decrease alert speed" class="w-8 h-8 rounded flex items-center justify-center text-on-surface active:bg-surface-container-highest transition-colors select-none" id="speed-minus" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="px-2 min-w-[76px] text-center font-display-md text-label-telemetry-lg text-secondary font-bold tracking-tight">
+<span id="speed-val">40</span> <span class="font-label-telemetry-sm text-label-telemetry-sm text-outline font-normal">km/h</span>
+</div>
+<button aria-label="Increase alert speed" class="w-8 h-8 rounded flex items-center justify-center text-on-surface active:bg-surface-container-highest transition-colors select-none" id="speed-plus" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Low Fuel Warning Row -->
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[19px]">local_gas_station</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold truncate">Low fuel warning</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Notify when the fuel gauge drops to this level</span>
+</div>
+</div>
+<!-- Toggle ON -->
+<button aria-checked="true" class="w-12 h-6 bg-primary-container rounded-full p-0.5 transition-colors relative flex-shrink-0 shadow-[0_0_12px_rgba(0,229,195,0.4)] focus:outline-none" role="switch" type="button">
+<div class="w-5 h-5 rounded-full bg-on-primary-container translate-x-6 transition-transform shadow-md"></div>
+</button>
+</div>
+<!-- Sub-control Stepper Box -->
+<div class="ml-10 bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-outline">battery_alert</span>
+<span class="font-label-telemetry-md text-label-telemetry-md text-on-surface-variant">Warn at:</span>
+</div>
+<div class="flex items-center bg-surface-container-high rounded-lg p-0.5">
+<button aria-label="Decrease fuel threshold" class="w-8 h-8 rounded flex items-center justify-center text-on-surface active:bg-surface-container-highest transition-colors select-none" id="fuel-minus" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="px-2 min-w-[70px] text-center font-display-md text-label-telemetry-lg text-secondary font-bold tracking-tight">
+<span id="fuel-val">2</span> <span class="font-label-telemetry-sm text-label-telemetry-sm text-outline font-normal">bars</span>
+</div>
+<button aria-label="Increase fuel threshold" class="w-8 h-8 rounded flex items-center justify-center text-on-surface active:bg-surface-container-highest transition-colors select-none" id="fuel-plus" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- APPEARANCE & DEVELOPER Section -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase tracking-wider">APPEARANCE &amp; DEVELOPER</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline-variant">UI_CORE_CONFIG</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-md shadow-sm">
+<!-- Theme Switcher Segmented Control -->
+<div class="flex flex-col space-y-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Interface Theme</span>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-lowest p-1 rounded-xl">
+<!-- Dark Option (Active) -->
+<button class="theme-btn py-2 px-3 rounded-lg bg-surface-container-high text-primary font-label-telemetry-md text-label-telemetry-md uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_0_10px_rgba(0,229,195,0.25)] transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">dark_mode</span>
+<span>Dark</span>
+</button>
+<!-- Light Option -->
+<button class="theme-btn py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-label-telemetry-md text-label-telemetry-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">light_mode</span>
+<span>Light</span>
+</button>
+<!-- System Option -->
+<button class="theme-btn py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-label-telemetry-md text-label-telemetry-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+<span>System</span>
+</button>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Developer Options Row -->
+<button class="w-full flex items-center justify-between text-left group transition-colors" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-outline group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[19px]">code</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Developer options</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CAN bus inspection &amp; raw logs</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-on-surface transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Subtle Footer Attribution -->
+<div class="pt-2 pb-4 text-center">
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline tracking-wider">Developed by Heshan</span>
+</div>
+</div>
+</div>
+<script>
+  // Interactive micro-steppers for Speed and Fuel alerts
+  (function() {
+    const speedValEl = document.getElementById('speed-val');
+    const fuelValEl = document.getElementById('fuel-val');
+    const speedMinus = document.getElementById('speed-minus');
+    const speedPlus = document.getElementById('speed-plus');
+    const fuelMinus = document.getElementById('fuel-minus');
+    const fuelPlus = document.getElementById('fuel-plus');
+
+    let currentSpeed = 40;
+    let currentFuel = 2;
+
+    if (speedMinus && speedPlus && speedValEl) {
+      speedMinus.addEventListener('click', () => {
+        if (currentSpeed > 20) {
+          currentSpeed -= 5;
+          speedValEl.textContent = currentSpeed;
+        }
+      });
+      speedPlus.addEventListener('click', () => {
+        if (currentSpeed < 120) {
+          currentSpeed += 5;
+          speedValEl.textContent = currentSpeed;
+        }
+      });
+    }
+
+    if (fuelMinus && fuelPlus && fuelValEl) {
+      fuelMinus.addEventListener('click', () => {
+        if (currentFuel > 1) {
+          currentFuel -= 1;
+          fuelValEl.textContent = currentFuel;
+        }
+      });
+      fuelPlus.addEventListener('click', () => {
+        if (currentFuel < 4) {
+          currentFuel += 1;
+          fuelValEl.textContent = currentFuel;
+        }
+      });
+    }
+
+    // Toggle switch interaction
+    const switches = document.querySelectorAll('button[role="switch"]');
+    switches.forEach(sw => {
+      sw.addEventListener('click', () => {
+        const isChecked = sw.getAttribute('aria-checked') === 'true';
+        const thumb = sw.firstElementChild;
+        if (isChecked) {
+          sw.setAttribute('aria-checked', 'false');
+          sw.classList.remove('bg-primary-container', 'shadow-[0_0_12px_rgba(0,229,195,0.4)]');
+          sw.classList.add('bg-surface-container-highest');
+          thumb.classList.remove('translate-x-6', 'bg-on-primary-container');
+          thumb.classList.add('translate-x-0.5', 'bg-outline');
+        } else {
+          sw.setAttribute('aria-checked', 'true');
+          sw.classList.add('bg-primary-container', 'shadow-[0_0_12px_rgba(0,229,195,0.4)]');
+          sw.classList.remove('bg-surface-container-highest');
+          thumb.classList.add('translate-x-6', 'bg-on-primary-container');
+          thumb.classList.remove('translate-x-0.5', 'bg-outline');
+        }
+      });
+    });
+
+    // Theme selector tabs
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        themeButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'text-primary', 'shadow-[0_0_10px_rgba(0,229,195,0.25)]');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-high', 'text-primary', 'shadow-[0_0_10px_rgba(0,229,195,0.25)]');
+        btn.classList.remove('text-on-surface-variant');
+      });
+    });
+  })();
+</script></main><div class="fixed bottom-0 w-full z-50 pb-safe pointer-events-none px-gutter mb-space-sm"><nav class="pointer-events-auto max-w-[370px] mx-auto bg-surface-container-low/90 backdrop-blur-xl rounded-full p-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.7)] flex items-center justify-between" data-active-classes="bg-surface-container-high text-primary font-semibold shadow-[0_0_12px_rgba(0,229,195,0.25)]"><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-0.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[20px]">near_me</span><span class="font-label-telemetry-sm text-[9px] uppercase tracking-wider">Nav</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-0.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span class="font-label-telemetry-sm text-[9px] uppercase tracking-wider">Dash</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-0.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span class="font-label-telemetry-sm text-[9px] uppercase tracking-wider">Stats</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-0.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="logs" href="#"><span class="material-symbols-outlined text-[20px]">terminal</span><span class="font-label-telemetry-sm text-[9px] uppercase tracking-wider">Logs</span></a><a aria-current="page" class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-0.5 rounded-full transition-colors bg-surface-container-high text-primary font-semibold shadow-[0_0_12px_rgba(0,229,195,0.25)]" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-telemetry-sm text-[9px] uppercase tracking-wider">Setup</span></a></nav></div></body></html>
