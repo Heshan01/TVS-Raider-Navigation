@@ -304,17 +304,17 @@ class MainActivity : Activity() {
 
     private fun font(file: String, weight: Int): Typeface {
         val key = "$file$weight"
-        var t = fonts[key]
-        if (t == null) {
-            try {
-                t = Typeface.Builder(assets, "fonts/$file").setFontVariationSettings("'wght' $weight").build()
-            } catch (e: Exception) {
-                t = null
-            }
-            if (t == null) t = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL)
-            fonts[key] = t
+        val cached = fonts[key]
+        if (cached != null) return cached
+
+        val loaded = try {
+            Typeface.Builder(assets, "fonts/$file").setFontVariationSettings("'wght' $weight").build()
+        } catch (e: Exception) {
+            null
         }
-        return t
+        val result = loaded ?: Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL)
+        fonts[key] = result
+        return result
     }
 
     private fun display(w: Int): Typeface = font("SpaceGrotesk.ttf", w)
@@ -1632,7 +1632,7 @@ class MainActivity : Activity() {
                 }
                 list.addView(row, LinearLayout.LayoutParams(-1, -2).apply { setMargins(0, 0, 0, dp(8)) })
             }
-            listScroll.layoutParams.height = if (shown.isEmpty()) dp(1) else Math.min(shown.size() * dp(66), dp(330))
+            listScroll.layoutParams.height = if (shown.isEmpty()) dp(1) else Math.min(shown.size * dp(66), dp(330))
             listScroll.requestLayout()
         }
 
