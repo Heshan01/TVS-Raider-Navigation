@@ -46,7 +46,7 @@ object LogRedactor {
         val m = FIELD.matcher(line)
         val sb = StringBuffer()
         while (m.find()) {
-            m.appendReplacement(sb, Matcher.quoteReplacement(m.group(1) + "=[" + redactText(m.group(2) ?: "") + "]"))
+            m.appendReplacement(sb, Matcher.quoteReplacement(m.group(1).orEmpty() + "=[" + redactText(m.group(2) ?: "") + "]"))
         }
         m.appendTail(sb)
         return sb.toString()

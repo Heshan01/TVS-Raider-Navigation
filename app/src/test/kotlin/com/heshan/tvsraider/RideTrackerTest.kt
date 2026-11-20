@@ -14,6 +14,8 @@ class RideTrackerTest {
     fun testRideStartAndFinish() {
         var finishedRide: RideTracker.Ride? = null
         var changedRide: RideTracker.Ride? = null
+        @Suppress("UNUSED_VALUE")
+        changedRide = null
 
         val tracker = RideTracker(object : RideTracker.Listener {
             override fun finished(r: RideTracker.Ride) {

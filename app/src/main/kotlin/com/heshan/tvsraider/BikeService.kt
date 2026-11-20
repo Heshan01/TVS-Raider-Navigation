@@ -188,7 +188,7 @@ class BikeService : Service() {
 
         private fun sortKey(f: File): String {
             val m = DAY_NAME.matcher(f.name)
-            return if (m.matches()) m.group(3) + m.group(2) + m.group(1) else f.name
+            return if (m.matches()) m.group(3).orEmpty() + m.group(2).orEmpty() + m.group(1).orEmpty() else f.name
         }
 
         private fun prune() {

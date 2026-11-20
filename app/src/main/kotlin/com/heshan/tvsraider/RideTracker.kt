@@ -42,7 +42,7 @@ class RideTracker(private val listener: Listener) {
 
         fun km(): Double {
             val d = odoEnd - odoStart
-            return if (d in 0..19999) d / 10.0 else speedKm
+            return if (d in 1..19999) d / 10.0 else speedKm
         }
 
         fun durationMs(): Long = Math.max(0, end - start)
@@ -96,7 +96,7 @@ class RideTracker(private val listener: Listener) {
         if (moving) {
             lastMoving = now
             currentRide.end = now
-            currentRide.odoEnd = Math.max(currentRide.odoEnd, odo)
+            currentRide.odoEnd = odo
         }
         currentRide.maxKmh = Math.max(currentRide.maxKmh, kmh)
         lastSample = now

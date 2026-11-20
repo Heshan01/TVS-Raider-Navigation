@@ -45,7 +45,7 @@ object ArrowShape {
             seed(ink, outside, q, n - 1, i, n)
         }
         while (!q.isEmpty()) {
-            val p = q.poll()
+            val p = q.poll() ?: continue
             val x = p % n
             val y = p / n
             seed(ink, outside, q, x + 1, y, n)
@@ -101,7 +101,7 @@ object ArrowShape {
         }
         var maxD = 0
         while (!q.isEmpty()) {
-            val p = q.poll()
+            val p = q.poll() ?: continue
             val x = p % n
             val y = p / n
             val d = dist[p]
