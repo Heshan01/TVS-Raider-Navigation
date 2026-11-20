@@ -28,6 +28,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
 
       - name: Accept Android SDK Licenses
         run: |
@@ -45,7 +47,7 @@ jobs:
             echo "Downloading gradle-wrapper.jar..."
             curl -sLo gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradle/wrapper/gradle-wrapper.jar
           fi
-          chmod +x gradlew
+          chmod +x gradlew || true
 
       - name: Run Unit Tests
         run: |
@@ -54,7 +56,7 @@ jobs:
             TARGET_DIR="Raider"
           fi
           cd "$TARGET_DIR"
-          ./gradlew test --stacktrace
+          ./gradlew test --stacktrace || gradle test --stacktrace
 
       - name: Build Obfuscated Release APK
         run: |
@@ -63,7 +65,7 @@ jobs:
             TARGET_DIR="Raider"
           fi
           cd "$TARGET_DIR"
-          ./gradlew assembleRelease --stacktrace
+          ./gradlew assembleRelease --stacktrace || gradle assembleRelease --stacktrace
 
       - name: Prepare APK Artifact
         run: |
