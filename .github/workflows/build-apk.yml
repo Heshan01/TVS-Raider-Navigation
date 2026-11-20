@@ -1,0 +1,79 @@
+name: Build TVS Raider APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build & Package Android APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Ensure Gradle Wrapper & Permissions
+        run: |
+          if [ ! -f "gradlew" ] && [ -d "Raider" ]; then
+            cd Raider
+          fi
+          if [ ! -f "gradle/wrapper/gradle-wrapper.jar" ]; then
+            gradle wrapper --gradle-version 8.7
+          fi
+          chmod +x gradlew
+
+      - name: Run Unit Tests
+        run: |
+          if [ ! -f "gradlew" ] && [ -d "Raider" ]; then
+            cd Raider
+          fi
+          ./gradlew test
+
+      - name: Build Debug APK
+        run: |
+          if [ ! -f "gradlew" ] && [ -d "Raider" ]; then
+            cd Raider
+          fi
+          ./gradlew assembleDebug
+
+      - name: Prepare APK Artifact
+        run: |
+          APK_PATH=$(find . -name "*.apk" -type f | head -n 1)
+          echo "Found APK at: $APK_PATH"
+          mkdir -p output
+          cp "$APK_PATH" output/TVS-Raider-v1.0.0.apk
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TVS-Raider-App-APK
+          path: output/TVS-Raider-v1.0.0.apk
+          retention-days: 30
+
+      - name: Create GitHub Release (On Tag)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: output/TVS-Raider-v1.0.0.apk
+          name: TVS Raider Navigations ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
